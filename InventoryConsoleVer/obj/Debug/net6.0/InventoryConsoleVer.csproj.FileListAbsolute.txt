@@ -1,0 +1,15 @@
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\bin\Debug\net6.0\InventoryConsoleVer.exe
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\bin\Debug\net6.0\InventoryConsoleVer.deps.json
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\bin\Debug\net6.0\InventoryConsoleVer.runtimeconfig.json
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\bin\Debug\net6.0\InventoryConsoleVer.dll
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\bin\Debug\net6.0\InventoryConsoleVer.pdb
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.AssemblyInfoInputs.cache
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.AssemblyInfo.cs
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.csproj.CoreCompileInputs.cache
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.sourcelink.json
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.dll
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\refint\InventoryConsoleVer.dll
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.pdb
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\InventoryConsoleVer.genruntimeconfig.cache
+D:\Works\Repository\InventoryConsoleVer\InventoryConsoleVer\obj\Debug\net6.0\ref\InventoryConsoleVer.dll
