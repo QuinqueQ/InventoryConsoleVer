@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace InventoryConsoleVer.Characters
 {
-    internal class Warrior
-    {
-    }
+  
 }

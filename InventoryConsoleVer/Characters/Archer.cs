@@ -8,12 +8,7 @@ namespace InventoryConsoleVer.Characters
 {
     internal class Archer
     {
-        public Archer()
-        {
-            Level = 1;
-        }
-        public int Level { get; set; }
-        public string ValidTypeOfItems { get; set; }
+       
 
     }
 }

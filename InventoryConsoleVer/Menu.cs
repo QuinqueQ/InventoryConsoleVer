@@ -1,8 +1,11 @@
 ﻿using InventoryConsoleVer;
+using System;
+using System.Collections.Generic;
 
 internal class Menu
 {
-    private static List<Inventory_Item> inventory = new();
+    private static Player player = new Player("", "", 1);
+
     private enum MenuItem
     {
         Инвентарь = 1,
@@ -10,12 +13,15 @@ internal class Menu
         Выход = 3
     }
 
-   
-
     public static void ShowMainMenu(ref string playerName, ref string playerClass, ref int playerLevel)
     {
         // Первый этап: выбор класса
         ChooseCharacterClass(ref playerClass, ref playerName);
+
+        // Устанавливаем информацию о персонаже
+        player.Name = playerName;
+        player.Class = playerClass;
+        player.Level = playerLevel;
 
         // Второй этап: основное меню
         ShowMainMenuOptions(ref playerName, ref playerClass, ref playerLevel);
@@ -83,8 +89,55 @@ internal class Menu
                 case ConsoleKey.Enter:
                     ExecuteMenuItem(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
                     break;
+                case ConsoleKey.G:
+                    // Добавляем обработку кнопки "Получить базовый комплект"
+                    GetBasicKit();
+                    break;
             }
         }
+    }
+
+    private static void GetBasicKit()
+    {
+
+        // Проверяем, достигнут ли лимит предметов
+        if (player.Inventory.Count >= Full_Items.InventoryCapacity)
+        {
+            Console.Clear();
+            Console.WriteLine("Вы достигли лимита предметов!");
+            Console.ReadKey(true);
+            return;
+        }
+
+        // Генерируем и добавляем 10 случайных предметов в инвентарь
+        Random random = new Random();
+        for (int i = 0; i < 10; i++)
+        {
+            // Проверяем, достигнут ли лимит предметов после добавления каждого предмета
+            if (player.Inventory.Count >= Full_Items.Itemss.Count)
+            {
+                Console.Clear();
+                Console.WriteLine("Вы достигли лимита предметов!");
+                Console.ReadKey(true);
+                return;
+            }
+
+            int randomIndex = random.Next(Full_Items.Itemss.Count);
+            Inventory_Item randomItem = Full_Items.Itemss[randomIndex];
+
+            // Проверяем, чтобы не добавить один и тот же предмет дважды
+            while (player.Inventory.Contains(randomItem))
+            {
+                randomIndex = random.Next(Full_Items.Itemss.Count);
+                randomItem = Full_Items.Itemss[randomIndex];
+            }
+
+            player.AddItemToInventory(randomItem);
+        }
+
+        Console.Clear();
+        Console.WriteLine("Вы получили базовый комплект!");
+        Console.ReadKey(true);
     }
 
     private static void PrintMenu(MenuItem currentMenuItem)
@@ -136,15 +189,78 @@ internal class Menu
     private static void ShowInventory()
     {
         Console.Clear();
-        Console.WriteLine("Инвентарь:");
+        Console.WriteLine($" Инвентарь:\n Предметов ({player.Inventory.Count}/{Full_Items.InventoryCapacity})");
 
-        foreach (Inventory_Item item in Full_Items.Itemss)
+        int selectedIndex = 0; 
+
+        while (true)
         {
-            Console.WriteLine();
-            item.Display();
-        }
+            Console.Clear();
 
-        Console.ReadKey(true);
+            Console.WriteLine($" Инвентарь:\n Предметов ({player.Inventory.Count}/{Full_Items.InventoryCapacity})");
+
+            for (int i = 0; i < player.Inventory.Count; i++)
+            {
+                Console.ResetColor();
+
+                if (i == selectedIndex)
+                {
+                    Console.BackgroundColor = ConsoleColor.White;
+                    SetRarityColor(player.Inventory[i].Rarity);
+                }
+                else
+                {
+                    SetRarityColor(player.Inventory[i].Rarity);
+                }
+
+                Console.WriteLine($"{i + 1}. {player.Inventory[i].Name}");
+
+                Console.ResetColor();
+            }
+
+            Console.WriteLine("\nДля выхода в главное меню нажмите 0.");
+
+            ConsoleKeyInfo key = Console.ReadKey(true);
+
+            if (key.Key == ConsoleKey.D0 || key.Key == ConsoleKey.NumPad0)
+            {
+                return; 
+            }
+
+            if (key.Key == ConsoleKey.UpArrow && selectedIndex > 0)
+            {
+                selectedIndex--;
+            }
+            else if (key.Key == ConsoleKey.DownArrow && selectedIndex < player.Inventory.Count - 1)
+            {
+                selectedIndex++;
+            }
+        }
+    }
+
+    private static void SetRarityColor(string rarity)
+    {
+        switch (rarity.ToLower())
+        {
+            case "обычный":
+                Console.ForegroundColor = ConsoleColor.White;
+                break;
+            case "необычный":
+                Console.ForegroundColor = ConsoleColor.Green;
+                break;
+            case "редкий":
+                Console.ForegroundColor = ConsoleColor.Blue;
+                break;
+            case "эпический":
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                break;
+            case "легендарный":
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                break;
+            default:
+                Console.ForegroundColor = ConsoleColor.Gray;
+                break;
+        }
     }
 
     private static void ShowLevel(ref string playerName, ref string playerClass, ref int playerLevel, MenuItem currentMenuItem)
@@ -163,6 +279,7 @@ internal class Menu
             if (int.TryParse(Console.ReadLine(), out int enteredLevel))
             {
                 playerLevel = enteredLevel;
+                Full_Items.UpdateInventoryCapacity(playerLevel);
                 Console.WriteLine("Отлично, для выхода, нажмите любую клавишу");
                 Console.ReadKey();
                 Console.Clear();
@@ -175,18 +292,6 @@ internal class Menu
                 Console.Clear();
                 ShowLevel(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
             }
-        }
-        else if (selectedKey.Key == ConsoleKey.Q)
-        {
-            Console.Clear();
-            PrintMenu(currentMenuItem);
-        }
-        else
-        {
-            Console.Clear();
-            Console.WriteLine("Вы ввели неверное значение, попробуйте еще раз");
-            Console.ReadKey();
-            ShowLevel(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
         }
     }
 }

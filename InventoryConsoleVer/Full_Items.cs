@@ -12,6 +12,7 @@ namespace InventoryConsoleVer
         {
             GenerateFullItems();
         }
+        public static int InventoryCapacity { get; private set; } = 20;
 
         static public List<Inventory_Item> Itemss;
 
@@ -31,6 +32,13 @@ namespace InventoryConsoleVer
             Itemss.AddRange(legendary_Item.Cast<Inventory_Item>().ToList());
 
         }
+        public static void UpdateInventoryCapacity(int playerLevel)
+        {
+            // Увеличиваем максимальный размер инвентаря каждые 5 уровней героя
+            InventoryCapacity = 20 + (playerLevel / 5) * 5;
+        }
+
+
 
         static public List<Common_Item> common_Items = new List<Common_Item>
         {
