@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "VQ95HNcE75uIrZi/N9ZoYfsJgQ0N5qXX7/8wGbf7kw1U4hoGvmx/63roFefwsnyfxJ0Lq3bcG6nvckV5mX4Uzg==",
+  "success": true,
+  "projectFilePath": "D:\\Works\\Repository\\InventoryConsoleVer\\myproj\\myproj.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\nstack.core\\1.0.7\\nstack.core.1.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\terminal.gui\\1.14.1\\terminal.gui.1.14.1.nupkg.sha512"
+  ],
+  "logs": []
+}
