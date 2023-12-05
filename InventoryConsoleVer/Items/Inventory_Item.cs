@@ -7,7 +7,6 @@ namespace InventoryConsoleVer.Items
     {
         public ConsoleColor Color;
 
-        public int Id { get; set; }
         public string? Type { get; set; }
         public string? Name { get; set; }
         public string Rarity { get; protected set; }
@@ -22,7 +21,7 @@ namespace InventoryConsoleVer.Items
         public void Display()
         {
             Console.ForegroundColor = Color;
-            Console.WriteLine($"ID: {Id}, Название: {Name}, Тип: {Type}, Редкость: {Rarity}");
+            Console.WriteLine($" Название: {Name}, Тип: {Type}, Редкость: {Rarity}");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }

@@ -1,25 +1,25 @@
 ﻿using InventoryConsoleVer.Items;
 using System;
 using System.Collections.Generic;
+using InventoryConsoleVer;
 
 internal class Menu
 {
 
     static private int selectedIndex = 0;
-    static private Inventory_Item selectedItem;
 
-    private static Player player = new Player("", "", 1);
+    public static Player player = new Player("", "", 1);
 
     private enum MenuItem
     {
         Инвентарь = 1,
-        Уровень = 2,
+        Подземелье = 2,
         Выход = 3
     }
 
     public static void ShowMainMenu(ref string playerName, ref string playerClass, ref int playerLevel)
     {
-        // Первый этап: выбор класса
+        //  выбор класса
         ChooseCharacterClass(ref playerClass, ref playerName);
 
         // Устанавливаем информацию о персонаже
@@ -27,7 +27,7 @@ internal class Menu
         player.Class = playerClass;
         player.Level = playerLevel;
 
-        // Второй этап: основное меню
+        // основное меню
         ShowMainMenuOptions(ref playerName, ref playerClass, ref playerLevel);
     }
 
@@ -43,12 +43,12 @@ internal class Menu
             Console.WriteLine($"Выбранное имя: {playerName}\n");
             Console.WriteLine("Выберите класс:\n");
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++) 
             {
                 Console.BackgroundColor = (selectedClassIndex == i) ? ConsoleColor.White : ConsoleColor.Black;
                 Console.ForegroundColor = (selectedClassIndex == i) ? ConsoleColor.Black : ConsoleColor.White;
 
-                Console.WriteLine($"{i + 1}. {(i == 0 ? "Archer" : "Warrior")}");
+                Console.WriteLine($"{i + 1}. {(i == 0 ? "Archer" : (i == 1 ? "Warrior" : "Mage"))}");
 
                 Console.ResetColor();
             }
@@ -58,13 +58,24 @@ internal class Menu
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    selectedClassIndex = (selectedClassIndex - 1 + 2) % 2;
+                    selectedClassIndex = (selectedClassIndex - 1 + 3) % 3;
                     break;
                 case ConsoleKey.DownArrow:
-                    selectedClassIndex = (selectedClassIndex + 1) % 2;
+                    selectedClassIndex = (selectedClassIndex + 1) % 3;
                     break;
                 case ConsoleKey.Enter:
-                    playerClass = (selectedClassIndex == 0) ? "Archer" : "Warrior";
+                    switch (selectedClassIndex)
+                    {
+                        case 0:
+                            playerClass = "Archer";
+                            break;
+                        case 1:
+                            playerClass = "Warrior";
+                            break;
+                        case 2:
+                            playerClass = "Mage";
+                            break;
+                    }
                     return;
             }
         }
@@ -94,13 +105,33 @@ internal class Menu
                 case ConsoleKey.Enter:
                     ExecuteMenuItem(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
                     break;
+                case ConsoleKey.L:
+                    ShowLevel(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
+                    break;
                 case ConsoleKey.G:
-                    // Добавляем обработку кнопки "Получить базовый комплект"
                     GetBasicKit();
                     break;
             }
         }
     }
+
+
+    private static void EnterDungeon(ref string playerName, ref string playerClass, ref int playerLevel)
+    {
+        Console.Clear();
+        Console.WriteLine("Добро пожаловать в подземелье! Готовы ли вы к вызову?");
+        Console.WriteLine("Нажмите Enter, чтобы начать Квиз.");
+
+        ConsoleKeyInfo key = Console.ReadKey(true);
+
+        if (key.Key == ConsoleKey.Enter)
+        {
+            Quiz quiz = new Quiz(player);
+            quiz.StartQuiz(ref playerLevel);
+            Full_Items.UpdateInventoryCapacity(playerLevel);
+        }
+    }
+
 
     private static void GetBasicKit()
     {
@@ -113,7 +144,7 @@ internal class Menu
             return;
         }
 
-        // Генерируем и добавляем 10 случайных предметов в инвентарь
+        // добавляем 10 случайных предметов в инвентарь
         Random random = new Random();
         for (int i = 0; i < 10; i++)
         {
@@ -185,8 +216,8 @@ internal class Menu
             case MenuItem.Инвентарь:
                 ShowInventory();
                 break;
-            case MenuItem.Уровень:
-                ShowLevel(ref playerName, ref playerClass, ref playerLevel, currentMenuItem);
+            case MenuItem.Подземелье:
+                EnterDungeon(ref playerName, ref playerClass, ref playerLevel);
                 break;
             case MenuItem.Выход:
                 Environment.Exit(0);
@@ -223,7 +254,7 @@ internal class Menu
                     Console.Write($"   ");
                 }
 
-                Console.Write($"{(i + 1).ToString().PadLeft(2)})"); // Изменено для выравнивания номеров
+                Console.Write($"{(i + 1).ToString().PadLeft(2)})");
 
                 Console.ForegroundColor = player.Inventory[i].Color; // Цвет из класса предмета
                 Console.WriteLine($"{player.Inventory[i].Name}");
@@ -242,7 +273,7 @@ internal class Menu
 
             if (key.Key == ConsoleKey.Q)
             {
-                return; // Если нажата Q, возвращаемся в главное меню
+                return; 
             }
 
             if (key.Key == ConsoleKey.RightArrow)
@@ -265,7 +296,7 @@ internal class Menu
                     currentPage = player.Inventory.Count / itemsPerPage; // Переходим на последнюю страницу, если currentPage стало отрицательным
                     if (player.Inventory.Count % itemsPerPage == 0)
                     {
-                        currentPage--; // Корректируем currentPage, если количество предметов делится на itemsPerPage нацело
+                        currentPage--; 
                     }
                 }
 
@@ -305,9 +336,17 @@ internal class Menu
             Console.WriteLine($" Тип: {item.Type}\n");
             Console.WriteLine($" Редкость: {item.Rarity}\n");
             Console.ResetColor();
-            // Добавьте другие свойства предмета, если необходимо
-            Console.WriteLine("\n Для возврата в инвентарь нажмите Q");
+            if ((player.Class == "Warrior" && (item.Type == "Лук" || item.Type == "Посох")) ||
+                (player.Class == "Archer" && (item.Type == "Меч" || item.Type == "Посох" || item.Type == "Щит")) ||
+                (player.Class == "Mage" && (item.Type == "Лук" || item.Type == "Меч" || item.Type == "Щит")))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" Вы не можете надеть данное снаряжение");
+                Console.ResetColor();
+            }
 
+
+            Console.WriteLine("\n Для возврата в инвентарь нажмите Q");
             Console.WriteLine("\n Для удаления предмета нажмите D");
             Console.WriteLine(" Для улучшения предмета нажмите U");
 
@@ -319,7 +358,6 @@ internal class Menu
                     exitMenu = true;
                     break;
                 case ConsoleKey.D:
-                    // Добавим подтверждение перед удалением
                     Console.Write($"\nВы уверены, что хотите удалить ");
                     Console.ForegroundColor = item.Color;
                     Console.Write($"{item.Name}");
@@ -333,7 +371,6 @@ internal class Menu
 
                     if (confirmKey.Key == ConsoleKey.Y)
                     {
-                        // Удаление предмета из инвентаря
                         player.RemoveItemFromInventory(item);
                         Console.WriteLine($"\nПредмет {item.Name} успешно удален!");
                         exitMenu = true;
@@ -344,7 +381,6 @@ internal class Menu
                     }
                     break;
                 case ConsoleKey.U:
-                    // Улучшение предмета
                     UpgradeItem(item, currentIndex);
                     exitMenu = true;
                     break;
@@ -422,11 +458,9 @@ internal class Menu
                     }
                     break;
                 case ConsoleKey.Enter:
-                    // Производим улучшение
                     UpgradeProcess(item, sameRarityItems[selectedIndex]);
                     return;
                 case ConsoleKey.Q:
-                    // Возврат назад
                     return;
             }
         }
@@ -434,8 +468,6 @@ internal class Menu
 
     private static void UpgradeProcess(Inventory_Item baseItem, Inventory_Item upgradeItem)
     {
-        
-
         // Получаем новый предмет повышенной редкости
         Inventory_Item upgradedItem = UpgradeItems(baseItem, upgradeItem);
 
@@ -473,7 +505,6 @@ internal class Menu
 
     public static Inventory_Item? GetRandomHigherRarityItem(string currentRarity)
     {
-        // Получаем все предметы в порядке увеличения редкости
         List<List<Inventory_Item>> rarityGroups = new List<List<Inventory_Item>>
     {
         Full_Items.common_Items.Cast<Inventory_Item>().ToList(),
@@ -496,11 +527,8 @@ internal class Menu
                 return higherRarityItems[new Random().Next(higherRarityItems.Count)];
             }
         }
-
-        // Если не удалось выбрать предмет следующей редкости, возвращаем null
         return null;
     }
-
 
     private static void ShowLevel(ref string playerName, ref string playerClass, ref int playerLevel, MenuItem currentMenuItem)
     {
@@ -533,4 +561,5 @@ internal class Menu
             }
         }
     }
+    
 }

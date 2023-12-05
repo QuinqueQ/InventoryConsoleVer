@@ -16,6 +16,7 @@ internal class Player
         Level = level;
         Inventory = new List<Inventory_Item>();
     }
+   
 
     public void AddItemToInventory(Inventory_Item item)
     {
