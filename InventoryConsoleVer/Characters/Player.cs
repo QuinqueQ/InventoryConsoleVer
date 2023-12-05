@@ -1,4 +1,6 @@
-﻿using InventoryConsoleVer;
+﻿using InventoryConsoleVer.Items;
+using System;
+using System.Collections.Generic;
 
 internal class Player
 {
@@ -18,5 +20,10 @@ internal class Player
     public void AddItemToInventory(Inventory_Item item)
     {
         Inventory.Add(item);
+    }
+
+    public void RemoveItemFromInventory(Inventory_Item item)
+    {
+        Inventory.Remove(item);
     }
 }

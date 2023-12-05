@@ -1,10 +1,9 @@
-﻿using InventoryConsoleVer.Items;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace InventoryConsoleVer
+namespace InventoryConsoleVer.Items
 {
     internal class Full_Items
     {
@@ -20,10 +19,10 @@ namespace InventoryConsoleVer
         {
             Itemss = new List<Inventory_Item>();
 
-            
+
             Itemss.AddRange(common_Items.Cast<Inventory_Item>().ToList());
 
-            Itemss.AddRange(uncommon_Items.Cast<Inventory_Item>().ToList());
+            Itemss.AddRange(uncommon_Item.Cast<Inventory_Item>().ToList());
 
             Itemss.AddRange(rare_Item.Cast<Inventory_Item>().ToList());
 
@@ -35,7 +34,7 @@ namespace InventoryConsoleVer
         public static void UpdateInventoryCapacity(int playerLevel)
         {
             // Увеличиваем максимальный размер инвентаря каждые 5 уровней героя
-            InventoryCapacity = 20 + (playerLevel / 5) * 5;
+            InventoryCapacity = 20 + playerLevel / 5 * 5;
         }
 
 
@@ -44,7 +43,7 @@ namespace InventoryConsoleVer
         {
             new Common_Item{ Id = 0, Name = "Мачете", Type = "Меч" },
             new Common_Item { Id = 1, Name = "Меч", Type = "Меч" },
-            new Common_Item { Id = 2, Name = "Щит", Type = "Щит" }, 
+            new Common_Item { Id = 2, Name = "Щит", Type = "Щит" },
             new Common_Item { Id = 3, Name = "Лук", Type = "Лук" },
             new Common_Item { Id = 4, Name = "Кинжал", Type = "Оружие" },
             new Common_Item { Id = 5, Name = "Мантия", Type = "Доспех" },
@@ -65,7 +64,7 @@ namespace InventoryConsoleVer
             new Common_Item { Id = 20, Name = "Ножны", Type = "Доспех" }
         };
 
-        static public List<Uncommon_Item> uncommon_Items = new List<Uncommon_Item>
+        static public List<Uncommon_Item> uncommon_Item = new List<Uncommon_Item>
         {
             new Uncommon_Item { Id = 21, Name = "Заточенный Клинок", Type = "Меч" },
             new Uncommon_Item { Id = 22, Name = "Сверкающий Щит", Type = "Щит" },
@@ -89,7 +88,7 @@ namespace InventoryConsoleVer
             new Uncommon_Item { Id = 40, Name = "Ножны Живого Дерева", Type = "Доспех" }
 
 
-            
+
         };
 
         static public List<Rare_Item> rare_Item = new List<Rare_Item>
@@ -104,7 +103,7 @@ namespace InventoryConsoleVer
             new Rare_Item { Id = 48, Name = "Шлем странствующего рыцаря", Type = "Головной Убор" },
             new Rare_Item { Id = 49, Name = "Маска злобного фумигатора", Type = "Головной Убор" },
             new Rare_Item { Id = 50, Name = "Оскверненная печать верховного друида", Type = "Украшение" },
-           
+
         };
         static public List<Epic_Item> epic_Item = new List<Epic_Item>
         {
@@ -128,6 +127,30 @@ namespace InventoryConsoleVer
 
         };
 
+        public static Inventory_Item? GetRandomHigherRarityItem(string currentRarity)
+        {
+            List<List<Inventory_Item>> rarityGroups = new List<List<Inventory_Item>>
+            {
+                epic_Item.Cast<Inventory_Item>().ToList(),
+                legendary_Item.Cast<Inventory_Item>().ToList()
+            };
+
+            foreach (var group in rarityGroups)
+            {
+                if (group.Any(item => item.Rarity == currentRarity))
+                {
+                    // Если есть предметы с текущей редкостью, выбираем рандомный предмет из следующей редкости
+                    var higherRarityItems = group.Where(item => item.Rarity != currentRarity).ToList();
+                    if (higherRarityItems.Count > 0)
+                    {
+                        return higherRarityItems[new Random().Next(higherRarityItems.Count)];
+                    }
+                }
+            }
+
+            // Если не найдено предметов следующей редкости, возвращаем null
+            return null;
+        }
 
 
     }

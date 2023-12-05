@@ -1,9 +1,13 @@
-﻿using InventoryConsoleVer;
+﻿using InventoryConsoleVer.Items;
 using System;
 using System.Collections.Generic;
 
 internal class Menu
 {
+
+    static private int selectedIndex = 0;
+    static private Inventory_Item selectedItem;
+
     private static Player player = new Player("", "", 1);
 
     private enum MenuItem
@@ -29,15 +33,15 @@ internal class Menu
 
     private static void ChooseCharacterClass(ref string playerClass, ref string playerName)
     {
-        Console.WriteLine("Выберите класс:");
+        Console.WriteLine("Выберите класс:\n");
 
         int selectedClassIndex = 0; // Индекс выбранного класса
 
         while (true)
         {
             Console.Clear();
-            Console.WriteLine($"Выбранное имя: {playerName}");
-            Console.WriteLine("Выберите класс:");
+            Console.WriteLine($"Выбранное имя: {playerName}\n");
+            Console.WriteLine("Выберите класс:\n");
 
             for (int i = 0; i < 2; i++)
             {
@@ -65,6 +69,7 @@ internal class Menu
             }
         }
     }
+
 
     private static void ShowMainMenuOptions(ref string playerName, ref string playerClass, ref int playerLevel)
     {
@@ -99,7 +104,6 @@ internal class Menu
 
     private static void GetBasicKit()
     {
-
         // Проверяем, достигнут ли лимит предметов
         if (player.Inventory.Count >= Full_Items.InventoryCapacity)
         {
@@ -140,27 +144,31 @@ internal class Menu
         Console.ReadKey(true);
     }
 
+
     private static void PrintMenu(MenuItem currentMenuItem)
     {
-        Console.WriteLine("***********MENU***********");
+        Console.WriteLine("*********** MENU ***********");
+
         foreach (var item in Enum.GetValues(typeof(MenuItem)))
         {
             Console.ResetColor();
+
             if (item.Equals(currentMenuItem))
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("* " + item);
+                Console.WriteLine($"* {item,-20}");
                 Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("* " + item);
+                Console.WriteLine($"* {item,-20}");
             }
         }
 
         Console.WriteLine("**************************");
     }
+
 
     private static void ChangeMenuItem(ref MenuItem currentMenuItem, int direction)
     {
@@ -189,42 +197,80 @@ internal class Menu
     private static void ShowInventory()
     {
         Console.Clear();
-        Console.WriteLine($" Инвентарь:\n Предметов ({player.Inventory.Count}/{Full_Items.InventoryCapacity})");
-
-        int selectedIndex = 0; 
+        int itemsPerPage = 10; // Количество предметов на одной странице
+        int currentPage = 0; // Текущая страница
+        selectedIndex = 0; // Индекс выбранного предмета
 
         while (true)
         {
             Console.Clear();
 
-            Console.WriteLine($" Инвентарь:\n Предметов ({player.Inventory.Count}/{Full_Items.InventoryCapacity})");
+            Console.WriteLine($"    Инвентарь (Страница {currentPage + 1}): ");
 
-            for (int i = 0; i < player.Inventory.Count; i++)
+            int startIndex = currentPage * itemsPerPage;
+            int endIndex = Math.Min(startIndex + itemsPerPage, player.Inventory.Count);
+
+            for (int i = startIndex; i < endIndex; i++)
             {
-                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Gray; // Обычный цвет для номера и стрелочки
 
                 if (i == selectedIndex)
                 {
-                    Console.BackgroundColor = ConsoleColor.White;
-                    SetRarityColor(player.Inventory[i].Rarity);
+                    Console.Write("-> ");
                 }
                 else
                 {
-                    SetRarityColor(player.Inventory[i].Rarity);
+                    Console.Write($"   ");
                 }
 
-                Console.WriteLine($"{i + 1}. {player.Inventory[i].Name}");
+                Console.Write($"{(i + 1).ToString().PadLeft(2)})"); // Изменено для выравнивания номеров
+
+                Console.ForegroundColor = player.Inventory[i].Color; // Цвет из класса предмета
+                Console.WriteLine($"{player.Inventory[i].Name}");
 
                 Console.ResetColor();
             }
-
-            Console.WriteLine("\nДля выхода в главное меню нажмите 0.");
+            Console.WriteLine($"\nКоличество предметов: {player.Inventory.Count}/{Full_Items.InventoryCapacity}");
+            Console.WriteLine("************************************************");
+            Console.WriteLine("\nДля выхода в главное меню нажмите Q.");
+            Console.WriteLine("Для перехода между страницами используйте ← →");
+            Console.WriteLine("Для перемещения вверх используйте ↑");
+            Console.WriteLine("Для перемещения вниз используйте ↓");
+            Console.WriteLine("Для открытия информации о предмете нажмите Enter");
 
             ConsoleKeyInfo key = Console.ReadKey(true);
 
-            if (key.Key == ConsoleKey.D0 || key.Key == ConsoleKey.NumPad0)
+            if (key.Key == ConsoleKey.Q)
             {
-                return; 
+                return; // Если нажата Q, возвращаемся в главное меню
+            }
+
+            if (key.Key == ConsoleKey.RightArrow)
+            {
+                currentPage++;
+                if (currentPage * itemsPerPage >= player.Inventory.Count)
+                {
+                    currentPage = 0; // Возвращаемся на первую страницу, если превышен лимит
+                }
+
+                // Передвигаем курсор на первый элемент новой страницы
+                selectedIndex = currentPage * itemsPerPage;
+            }
+
+            if (key.Key == ConsoleKey.LeftArrow)
+            {
+                currentPage--;
+                if (currentPage < 0)
+                {
+                    currentPage = player.Inventory.Count / itemsPerPage; // Переходим на последнюю страницу, если currentPage стало отрицательным
+                    if (player.Inventory.Count % itemsPerPage == 0)
+                    {
+                        currentPage--; // Корректируем currentPage, если количество предметов делится на itemsPerPage нацело
+                    }
+                }
+
+                // Передвигаем курсор на последний элемент новой страницы
+                selectedIndex = Math.Min((currentPage + 1) * itemsPerPage - 1, player.Inventory.Count - 1);
             }
 
             if (key.Key == ConsoleKey.UpArrow && selectedIndex > 0)
@@ -235,33 +281,226 @@ internal class Menu
             {
                 selectedIndex++;
             }
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                // Отображение подробной информации о предмете
+                ShowItemDetails(player.Inventory[selectedIndex], selectedIndex);
+            }
         }
     }
 
-    private static void SetRarityColor(string rarity)
+
+
+    private static void ShowItemDetails(Inventory_Item item, int currentIndex)
     {
-        switch (rarity.ToLower())
+        bool exitMenu = false;
+
+        while (!exitMenu)
         {
-            case "обычный":
-                Console.ForegroundColor = ConsoleColor.White;
-                break;
-            case "необычный":
-                Console.ForegroundColor = ConsoleColor.Green;
-                break;
-            case "редкий":
-                Console.ForegroundColor = ConsoleColor.Blue;
-                break;
-            case "эпический":
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                break;
-            case "легендарный":
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                break;
-            default:
-                Console.ForegroundColor = ConsoleColor.Gray;
-                break;
+            Console.Clear();
+            Console.WriteLine($" Информация о предмете:\n ");
+            Console.ForegroundColor = item.Color;
+            Console.WriteLine($" Название: {item.Name}\n");
+            Console.WriteLine($" Тип: {item.Type}\n");
+            Console.WriteLine($" Редкость: {item.Rarity}\n");
+            Console.ResetColor();
+            // Добавьте другие свойства предмета, если необходимо
+            Console.WriteLine("\n Для возврата в инвентарь нажмите Q");
+
+            Console.WriteLine("\n Для удаления предмета нажмите D");
+            Console.WriteLine(" Для улучшения предмета нажмите U");
+
+            ConsoleKeyInfo key = Console.ReadKey(true);
+
+            switch (key.Key)
+            {
+                case ConsoleKey.Q:
+                    exitMenu = true;
+                    break;
+                case ConsoleKey.D:
+                    // Добавим подтверждение перед удалением
+                    Console.Write($"\nВы уверены, что хотите удалить ");
+                    Console.ForegroundColor = item.Color;
+                    Console.Write($"{item.Name}");
+                    Console.ResetColor();
+                    Console.Write("? (Y/N)");
+                    ConsoleKeyInfo confirmKey = Console.ReadKey(true);
+                    while (confirmKey.Key != ConsoleKey.Y && confirmKey.Key != ConsoleKey.N)
+                    {
+                        confirmKey = Console.ReadKey(true);
+                    }
+
+                    if (confirmKey.Key == ConsoleKey.Y)
+                    {
+                        // Удаление предмета из инвентаря
+                        player.RemoveItemFromInventory(item);
+                        Console.WriteLine($"\nПредмет {item.Name} успешно удален!");
+                        exitMenu = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\nУдаление предмета {item.Name} отменено.");
+                    }
+                    break;
+                case ConsoleKey.U:
+                    // Улучшение предмета
+                    UpgradeItem(item, currentIndex);
+                    exitMenu = true;
+                    break;
+            }
         }
     }
+
+
+
+
+    public static Inventory_Item? UpgradeItems(Inventory_Item baseItem, Inventory_Item upgradeItem)
+    {
+        // Проверяем, что редкость предметов совпадает
+        if (baseItem.Rarity == upgradeItem.Rarity)
+        {
+            // Получаем новый предмет повышенной редкости
+            Inventory_Item upgradedItem = GetRandomHigherRarityItem(baseItem.Rarity);
+
+            if (upgradedItem != null)
+            {
+                return upgradedItem;
+            }
+        }
+
+        // Если не удалось создать предмет повышенной редкости, возвращаем null
+        return null;
+    }
+    private static void UpgradeItem(Inventory_Item item, int currentIndex)
+    {
+        Console.Clear();
+        Console.WriteLine($" Выберите предмет той же редкости для улучшения {item.Name} (нажмите Q, чтобы вернуться):");
+
+        // Фильтруем предметы той же редкости
+        var sameRarityItems = player.Inventory.Where(i => i.Rarity == item.Rarity && i != item).ToList();
+
+        if (sameRarityItems.Count == 0)
+        {
+            Console.WriteLine(" Нет предметов для улучшения.");
+            Console.ReadKey(true);
+            return;
+        }
+
+        int selectedIndex = 0;
+
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine($" Выберите предмет той же редкости для улучшения {item.Name} (нажмите Q, чтобы вернуться):");
+
+            for (int i = 0; i < sameRarityItems.Count; i++)
+            {
+                Console.ForegroundColor = sameRarityItems[i].Color;
+                if (i == selectedIndex)
+                {
+                    Console.Write("-> ");
+                }
+                Console.WriteLine($" {i + 1}. {sameRarityItems[i].Name}");
+                Console.ResetColor();
+            }
+
+            ConsoleKeyInfo selectionKey = Console.ReadKey(true);
+
+            switch (selectionKey.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    if (selectedIndex > 0)
+                    {
+                        selectedIndex--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedIndex < sameRarityItems.Count - 1)
+                    {
+                        selectedIndex++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    // Производим улучшение
+                    UpgradeProcess(item, sameRarityItems[selectedIndex]);
+                    return;
+                case ConsoleKey.Q:
+                    // Возврат назад
+                    return;
+            }
+        }
+    }
+
+    private static void UpgradeProcess(Inventory_Item baseItem, Inventory_Item upgradeItem)
+    {
+        
+
+        // Получаем новый предмет повышенной редкости
+        Inventory_Item upgradedItem = UpgradeItems(baseItem, upgradeItem);
+
+        if (upgradedItem != null)
+        {
+            // Удаляем базовый предмет из инвентаря
+            player.RemoveItemFromInventory(baseItem);
+
+            // Удаляем предмет для улучшения из инвентаря
+            player.RemoveItemFromInventory(upgradeItem);
+
+            // Добавляем новый предмет в инвентарь
+            player.AddItemToInventory(upgradedItem);
+
+            Console.Clear();
+            Console.WriteLine(" Улучшение завершено!");
+            Console.ForegroundColor = baseItem.Color;
+            Console.Write($"\n {baseItem.Name} + {upgradeItem.Name}\n");
+            Console.ResetColor();
+            Console.WriteLine("\n были объединены в ");
+            Console.ForegroundColor = upgradedItem.Color;
+            Console.Write($"\n {upgradedItem.Name}!");
+            Console.ResetColor();
+
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Не удалось создать предмет повышенной редкости. Улучшение отменено.");
+        }
+
+        Console.ReadKey(true);
+    }
+
+
+    public static Inventory_Item? GetRandomHigherRarityItem(string currentRarity)
+    {
+        // Получаем все предметы в порядке увеличения редкости
+        List<List<Inventory_Item>> rarityGroups = new List<List<Inventory_Item>>
+    {
+        Full_Items.common_Items.Cast<Inventory_Item>().ToList(),
+        Full_Items.uncommon_Item.Cast<Inventory_Item>().ToList(),
+        Full_Items.rare_Item.Cast<Inventory_Item>().ToList(),
+        Full_Items.epic_Item.Cast<Inventory_Item>().ToList(),
+        Full_Items.legendary_Item.Cast<Inventory_Item>().ToList()
+    };
+
+        // Находим индекс текущей редкости
+        int currentRarityIndex = rarityGroups.FindIndex(group => group.Any(item => item.Rarity == currentRarity));
+
+        if (currentRarityIndex != -1 && currentRarityIndex < rarityGroups.Count - 1)
+        {
+            // Выбираем случайный предмет из следующей редкости
+            var higherRarityItems = rarityGroups[currentRarityIndex + 1];
+
+            if (higherRarityItems.Count > 0)
+            {
+                return higherRarityItems[new Random().Next(higherRarityItems.Count)];
+            }
+        }
+
+        // Если не удалось выбрать предмет следующей редкости, возвращаем null
+        return null;
+    }
+
 
     private static void ShowLevel(ref string playerName, ref string playerClass, ref int playerLevel, MenuItem currentMenuItem)
     {
