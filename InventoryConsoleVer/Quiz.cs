@@ -150,13 +150,11 @@ namespace InventoryConsoleVer
                 .Where(item => item.Rarity == rarity)
                 .ToList();
 
-            // Проверяем, есть ли награды этой редкости
             if (itemsByRarity.Count > 0)
             {
                 // Получаем случайную награду из списка
                 Inventory_Item reward = itemsByRarity[new Random().Next(itemsByRarity.Count)];
 
-                // Вместо простого вывода сообщения добавим предмет в инвентарь игрока
                 Console.Write($"Вы получили награду: ");
                 Console.ForegroundColor = reward.Color;
                 Console.Write($"{reward.Name} ({reward.Rarity})!\n");
@@ -166,7 +164,6 @@ namespace InventoryConsoleVer
             }
             else
             {
-                // Если нет подходящих наград, выводим сообщение об этом
                 Console.WriteLine($"К сожалению, нет подходящих наград для редкости: {rarity}");
             }
         }
