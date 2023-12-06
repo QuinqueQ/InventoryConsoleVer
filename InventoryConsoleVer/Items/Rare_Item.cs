@@ -13,6 +13,7 @@ namespace InventoryConsoleVer.Items
         {
             Rarity = "Редкий";
             Color = ConsoleColor.Blue;
+            Item_Level = 30;
         }
     }
 }

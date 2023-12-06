@@ -41,7 +41,7 @@ namespace InventoryConsoleVer.Items
 
         static public List<Common_Item> common_Items = new List<Common_Item>
         {
-            new Common_Item{ Name = "Мачете", Type = "Меч" },
+            new Common_Item { Name = "Мачете", Type = "Меч" },
             new Common_Item { Name = "Меч", Type = "Меч" },
             new Common_Item { Name = "Щит", Type = "Щит" },
             new Common_Item { Name = "Лук", Type = "Лук" },
@@ -107,21 +107,21 @@ namespace InventoryConsoleVer.Items
         };
         static public List<Epic_Item> epic_Item = new List<Epic_Item>
         {
-            new Epic_Item { Name = "Эльфбар (10000)тяжек", Type = "Украшение"},
-            new Epic_Item { Name = "Тетрадь Смеха", Type = "Оружие"},
-            new Epic_Item { Name = "Азим(Повелитель Форточки)", Type = "Оружие" },
-            new Epic_Item { Name = "Мешапы с Фреди Фазбером", Type = "Оружие" },
-            new Epic_Item { Name = "Линзы Слепошарого дракона", Type = "Украшение" },
+            new Epic_Item {Item_Level = 40, Name = "Эльфбар (10000)тяжек", Type = "Украшение"},
+            new Epic_Item {Item_Level = 45, Name = "Тетрадь Смеха", Type = "Оружие"},
+            new Epic_Item {Item_Level = 50, Name = "Азим(Повелитель Форточки)", Type = "Оружие" },
+            new Epic_Item {Item_Level = 55, Name = "Мешапы с Фреди Фазбером", Type = "Оружие" },
+            new Epic_Item {Item_Level = 59, Name = "Линзы Слепошарого дракона", Type = "Украшение" },
 
         };
 
         static public List<Legendary_Item> legendary_Item = new List<Legendary_Item>
         {
-            new Legendary_Item { Name = "Кольцо Вонголы", Type = "Украшение"},
-            new Legendary_Item { Name = "X-Banner", Type = "Оружие" },
-            new Legendary_Item { Name = "Шигури Кентоки", Type = "Меч" },
-            new Legendary_Item { Name = "Релься", Type = "Лук" },
-            new Legendary_Item { Name = "Гнев Дракона, вечный покой Таресгосы", Type = "Посох" }
+            new Legendary_Item {Item_Level = 70, Name = "Кольцо Вонголы", Type = "Украшение"},
+            new Legendary_Item {Item_Level = 100, Name = "X-Banner", Type = "Оружие" },
+            new Legendary_Item {Item_Level = 88, Name = "Шигури Кентоки", Type = "Меч" },
+            new Legendary_Item {Item_Level = 77, Name = "Релься", Type = "Лук" },
+            new Legendary_Item {Item_Level = 76, Name = "Гнев Дракона, вечный покой Таресгосы", Type = "Посох" }
 
 
 

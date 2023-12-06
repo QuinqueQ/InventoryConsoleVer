@@ -1,6 +1,7 @@
 ﻿using InventoryConsoleVer.Items;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace InventoryConsoleVer
 {
@@ -11,7 +12,7 @@ namespace InventoryConsoleVer
         private int[] questionOrder;
         private int correctAnswers;
 
-        private Player player; 
+        private Player player;
 
         internal Quiz(Player currentPlayer) 
         {
@@ -32,11 +33,11 @@ namespace InventoryConsoleVer
 
             answers = new string[]
             {
-                " 1.Инкапсуляция\n2. Полиморфизм\n3. Наследование\n4. Абстракция",
-                " 1.Методы для изменения данных\n2. Внешние файлы\n3. Операторы ветвления\n4. Управление памятью",
-                " 1.Абстракция\n2. Инкапсуляция\n3. Полиморфизм\n4. Наследование",
-                " 1. Возможность объекта иметь разные типы\n2. Сокрытие внутренней реализации\n3. Наследование\n4. Полиморфизм",
-                " 1.C\n2. Java\n3. Python\n4. Все вышеперечисленные"
+                " 1.Инкапсуляция\n 2.Полиморфизм\n 3.Наследование\n 4.Абстракция",
+                " 1.Методы для изменения данных\n 2.Внешние файлы\n 3.Операторы ветвления\n 4.Управление памятью",
+                " 1.Абстракция\n 2.Инкапсуляция\n 3.Полиморфизм\n 4.Наследование",
+                " 1.Возможность объекта иметь разные типы\n 2.Сокрытие внутренней реализации\n 3.Наследование\n 4.Полиморфизм",
+                " 1.C\n 2.Java\n 3.Python\n 4.Все вышеперечисленные"
             };
 
             var random = new Random();
@@ -48,8 +49,10 @@ namespace InventoryConsoleVer
         public void StartQuiz(ref int playerLevel)
         {
             Console.Clear();
-            Console.WriteLine("Квиз начинается!");
+            Console.WriteLine("             Квиз начинается!");
+            Console.WriteLine("**********************************************");
             Console.WriteLine("Ответьте на вопросы, чтобы получить награды.");
+            Thread.Sleep(2000);
 
             for (int i = 0; i < questionOrder.Length; i++)
             {
@@ -60,60 +63,71 @@ namespace InventoryConsoleVer
                 Console.WriteLine(answers[questionIndex]);
 
                 ConsoleKeyInfo key;
+                Console.Write("\nВыберите ответ (1, 2, 3, 4): ");
                 do
                 {
-                    Console.Write("Выберите ответ (1, 2, 3, 4): ");
-                    key = Console.ReadKey();
-                    Console.WriteLine();
+                    key = Console.ReadKey(true);
                 } while (key.KeyChar != '1' && key.KeyChar != '2' && key.KeyChar != '3' && key.KeyChar != '4');
 
                 if (key.KeyChar == GetCorrectAnswer(questionIndex)[0])
                 {
-                    Console.WriteLine("Правильно!\n");
+                    Console.WriteLine("\n--------------------------");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n Правильно!\n");
+                    Console.ResetColor();
                     playerLevel++;
                     correctAnswers++;
                 }
                 else
                 {
-                    Console.WriteLine($"Неправильно. Правильный ответ: {GetCorrectAnswer(questionIndex)}\n");
+                    Console.WriteLine("\n--------------------------");
+                    Console.ForegroundColor= ConsoleColor.Red;
+                    Console.WriteLine($"\n Неправильно!\n");
+                    Console.ResetColor();
+                    Console.WriteLine($" Правильный ответ: {GetCorrectAnswer(questionIndex)}\n");
                 }
 
-                Console.WriteLine("Нажмите Enter для следующего вопроса...");
-                Console.ReadLine();
+                Console.WriteLine(" Нажмите Любую клавишу для следующего вопроса...");
+                Console.ReadKey(true);
             }
-
+             Console.Clear();
             if (correctAnswers == 5)
             {
-                Console.WriteLine("Поздравляем! Вы ответили правильно на все вопросы!");
+                Console.WriteLine(" Поздравляем! Вы ответили правильно на все вопросы!");
                 GiveRandomReward();
             }
             else if (correctAnswers == 4)
             {
-                Console.WriteLine($"Вы ответили правильно на {correctAnswers} из 5 вопросов.");
+                Console.WriteLine($" Вы ответили правильно на {correctAnswers} из 5 вопросов.");
                 GiveRandomReward();
             }
             else if (correctAnswers == 3)
             {
-                Console.WriteLine($"Вы ответили правильно на {correctAnswers} из 5 вопросов.");
+                Console.WriteLine($" Вы ответили правильно на {correctAnswers} из 5 вопросов.");
                 GiveRandomReward();
             }
             else if (correctAnswers == 2)
             {
-                Console.WriteLine($"Вы ответили правильно на {correctAnswers} из 5 вопросов.");
+                Console.WriteLine($" Вы ответили правильно на {correctAnswers} из 5 вопросов.");
                 GiveRandomReward();
             }
             else if (correctAnswers == 1)
             {
-                Console.WriteLine($"Вы ответили правильно на {correctAnswers} из 5 вопросов.");
+                Console.WriteLine($" Вы ответили правильно на {correctAnswers} из 5 вопросов.");
                 GiveRandomReward();
             }
             else
             {
-                Console.WriteLine($"Вы ответили правильно на {correctAnswers} из 5 вопросов.");
+                Console.WriteLine($" Вы ответили правильно на {correctAnswers} из 5 вопросов.");
             }
 
-            Console.WriteLine("Нажмите Enter, чтобы вернуться в меню.");
-            Console.ReadLine();
+            Console.WriteLine("\n Нажмите Enter, чтобы вернуться в меню.");
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter)
+                    break;
+            }
         }
 
 
@@ -155,7 +169,7 @@ namespace InventoryConsoleVer
                 // Получаем случайную награду из списка
                 Inventory_Item reward = itemsByRarity[new Random().Next(itemsByRarity.Count)];
 
-                Console.Write($"Вы получили награду: ");
+                Console.Write($"\n Вы получили награду: ");
                 Console.ForegroundColor = reward.Color;
                 Console.Write($"{reward.Name} ({reward.Rarity})!\n");
                 Console.ResetColor();
@@ -164,7 +178,7 @@ namespace InventoryConsoleVer
             }
             else
             {
-                Console.WriteLine($"К сожалению, нет подходящих наград для редкости: {rarity}");
+                Console.WriteLine($" К сожалению, нет подходящих наград для редкости: {rarity}");
             }
         }
 

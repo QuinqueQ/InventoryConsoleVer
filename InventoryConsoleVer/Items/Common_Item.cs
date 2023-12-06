@@ -15,6 +15,7 @@ namespace InventoryConsoleVer.Items
         {
             Color = ConsoleColor.White;
             Rarity = "Обычный";
+            Item_Level = 1;
         }
 
         

@@ -20,7 +20,7 @@ namespace InventoryConsoleVer
 
         private static void GetPlayerInfo()
         {
-            Console.Write("Введите ваше имя: ");
+            Console.Write(" Введите ваше имя: ");
             playerName = Console.ReadLine();
         }
     }
