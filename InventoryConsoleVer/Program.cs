@@ -12,7 +12,7 @@ namespace InventoryConsoleVer
 
         static void Main()
         {
-            //Baluyus_Ji_Est.ShowGreetings();
+            Baluyus_Ji_Est.ShowGreetings();
 
             GetPlayerInfo();
             Menu.ShowMainMenu(ref playerName, ref playerClass, ref playerLevel);
