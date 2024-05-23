@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Works\\Repository\\InventoryConsoleVer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\legendary_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\legendary_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\baluyus_ji_est.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\baluyus_ji_est.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\uncommon_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\uncommon_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\inventory_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\inventory_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\rare_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\rare_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\characters\\archer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\characters\\archer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Menu.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Menu.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Menu.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Menu.cs",
+              "ViewState": "AQIAAAkCAAAAAAAAAAAmwBAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-04T01:41:06.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Legendary_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Legendary_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Legendary_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Legendary_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Legendary_Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-02T22:23:09.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Epic_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Epic_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Epic_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Epic_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Epic_Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-02T22:21:33.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Program.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Program.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Program.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-02T17:07:03.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Common_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Common_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Common_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Common_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Common_Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-02T20:23:31.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Player.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Characters\\Player.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Player.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Characters\\Player.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAuwBYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-04T13:16:29.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Quiz.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Quiz.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Quiz.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Quiz.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Quiz.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-05T12:23:44.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Full_Items.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Full_Items.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Full_Items.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Full_Items.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Full_Items.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-04T11:00:43.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Baluyus_Ji_Est.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Baluyus_Ji_Est.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Baluyus_Ji_Est.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Baluyus_Ji_Est.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Baluyus_Ji_Est.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAFYAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-05T11:29:35.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Uncommon_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Uncommon_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Uncommon_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Uncommon_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Uncommon_Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-08T17:24:11.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Inventory_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Inventory_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Inventory_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Inventory_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Inventory_Item.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-03T14:00:46.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Rare_Item.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Rare_Item.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Rare_Item.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Rare_Item.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Items\\Rare_Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-02T22:19:52.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Warrior.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Warrior.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Characters\\Warrior.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Warrior.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Characters\\Warrior.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-03T13:55:48.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Archer.cs",
+              "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Archer.cs",
+              "RelativeDocumentMoniker": "InventoryConsoleVer\\Characters\\Archer.cs",
+              "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Archer.cs",
+              "RelativeToolTip": "InventoryConsoleVer\\Characters\\Archer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-03T13:55:35.172Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
