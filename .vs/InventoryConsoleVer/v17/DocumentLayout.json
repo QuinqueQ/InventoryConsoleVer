@@ -7,20 +7,32 @@
       "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\legendary_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\legendary_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\quiz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\full_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\baluyus_ji_est.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,18 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\inventory_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\inventory_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\epic_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\characters\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|solutionrelative:inventoryconsolever\\items\\common_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FF56E07F-B36D-423B-AC67-FE42A5BD630C}|InventoryConsoleVer\\InventoryConsoleVer.csproj|d:\\works\\repository\\inventoryconsolever\\inventoryconsolever\\items\\rare_item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Menu.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Menu.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Menu.cs",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Legendary_Item.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Legendary_Item.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Legendary_Item.cs",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Epic_Item.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Epic_Item.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Epic_Item.cs",
@@ -124,14 +124,14 @@
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Program.cs",
               "ToolTip": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Program.cs",
               "RelativeToolTip": "InventoryConsoleVer\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-12-02T17:07:03.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "Common_Item.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Common_Item.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Common_Item.cs",
@@ -143,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Characters\\Player.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Characters\\Player.cs",
@@ -155,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Quiz.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Quiz.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Quiz.cs",
@@ -163,12 +163,11 @@
               "RelativeToolTip": "InventoryConsoleVer\\Quiz.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAzwBkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-05T12:23:44.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-05T12:23:44.139Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Full_Items.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Full_Items.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Full_Items.cs",
@@ -180,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Baluyus_Ji_Est.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Baluyus_Ji_Est.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Baluyus_Ji_Est.cs",
@@ -192,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Uncommon_Item.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Uncommon_Item.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Uncommon_Item.cs",
@@ -204,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Inventory_Item.cs",
               "DocumentMoniker": "D:\\Works\\Repository\\InventoryConsoleVer\\InventoryConsoleVer\\Items\\Inventory_Item.cs",
               "RelativeDocumentMoniker": "InventoryConsoleVer\\Items\\Inventory_Item.cs",
